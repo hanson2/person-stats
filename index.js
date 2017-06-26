@@ -1,9 +1,17 @@
 function changeHeading(ev){
-    h1 = document.querySelector("h1")
-
     ev.preventDefault()
-    h1.textContent = ev.target.personName.value
-}
+    const para = document.querySelector("#stats")
+    const next = ev.target.personName.value
 
+    //if(i!=0){
+    //const curr = para.textContent
+    //para.textContent = curr+next
+    //}else{
+        para.textContent = next
+    //    i++
+    //}
+}
+let i = 0;
 const personForm = document.querySelector("#person-form")
 personForm.addEventListener('submit', changeHeading)
+
