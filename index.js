@@ -1,9 +1,9 @@
 function changeHeading(ev){
-    ev.target.textContent = 'Clickity Click'
+    h1 = document.querySelector("h1")
+
+    ev.preventDefault()
+    h1.textContent = ev.target.personName.value
 }
 
-const btn = document.querySelector('button')
-btn.addEventListener('click', changeHeading)
-
-const p = document.querySelector('#instructions')
-p.addEventListener('click', changeHeading)
+const personForm = document.querySelector("#person-form")
+personForm.addEventListener('submit', changeHeading)
