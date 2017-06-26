@@ -1,15 +1,15 @@
 function changeHeading(ev){
     ev.preventDefault()
-    const para = document.querySelector("#stats")
+    const para = document.querySelector("#para")
     const next = ev.target.personName.value
 
-    //if(i!=0){
-    //const curr = para.textContent
-    //para.textContent = curr+next
-    //}else{
+    if(i!=0){
+    const curr = para.textContent
+    para.textContent = curr+", "+next
+    }else{
         para.textContent = next
-    //    i++
-    //}
+        i++
+    }
 }
 let i = 0;
 const personForm = document.querySelector("#person-form")
