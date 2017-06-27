@@ -1,14 +1,15 @@
 function changeHeading(ev){
     ev.preventDefault()
     const para = document.querySelector("#para")
-    const next1 = ev.target.personName.value
-    const next2 = ev.target.personInfo.value
-
+    const next = ev.target.personName.value
+    const color = ev.target.personInfo.value
+    para.style.color = color
     if(i!=0){
-    const curr = para.textContent
-    para.textContent = curr+", "+next1+":"+next2
+        
+        const curr = para.textContent
+        para.textContent = curr+", "+next
     }else{
-        para.textContent = next1+":"+next2
+        para.textContent = next
         i++
     }
 }
