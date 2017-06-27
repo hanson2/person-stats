@@ -4,14 +4,16 @@ function changeHeading(ev){
     const next = ev.target.personName.value
     const age = ev.target.personAge.value
     const color = ev.target.personInfo.value
-
-    const p = document.createElement('p')
-
-    p.textContent = `${next}: ${age}`
-    p.style.color = color
-
-    para.appendChild(p)
     
+
+    const list = document.createElement('ul')
+    para.appendChild(list)
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${next}`
+    list.appendChild(nameItem)
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
    
 }   
 const personForm = document.querySelector("#person-form")
