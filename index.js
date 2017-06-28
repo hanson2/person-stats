@@ -25,7 +25,7 @@ function renderList(para, name, age, colorDiv){
 }
 function renderListItem(list, name, age, colorDiv){
     const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${next}`
+    nameItem.textContent = `Name: ${name}`
     list.appendChild(nameItem)
     const ageItem = document.createElement('li')
     ageItem.textContent = `Age: ${age}`
