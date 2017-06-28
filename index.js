@@ -20,21 +20,21 @@ function renderColor(color, para){
 }
 function renderList(para, name, age, colorDiv){
     const list = document.createElement('ul')
-    renderListItem(list,name,age,colorDiv)
+    list.appendChild(renderListItem('name',name))
+    list.appendChild(renderListItem('age',age))
+    list.appendChild(renderListItem('color',colorDiv))
     para.appendChild(list)
 }
-function renderListItem(list, name, age, colorDiv){
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${name}`
-    list.appendChild(nameItem)
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-    list.appendChild(ageItem)
-    const colorItem = document.createElement('li')
-    colorItem.textContent = `Color: `
-
-    colorItem.appendChild(colorDiv)
-    list.appendChild(colorItem)
+function renderListItem(label, value){
+    const item = document.createElement('li')
+    item.textContent = `${label}: `
+    try{
+        item.appendChild(value)
+    }
+    catch(e){
+        item.textContent+=value
+    }
+    return item
 }
 const personForm = document.querySelector("#person-form")
 personForm.addEventListener('submit', handleEvent)
